@@ -1,1 +1,3 @@
 Hi my name is Siddhant Singh.
+My age is 21.
+I am a male.
