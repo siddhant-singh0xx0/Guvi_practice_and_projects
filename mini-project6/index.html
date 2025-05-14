@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mini-Project-6 Registration From Using function prototype | class and object of es6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+</head>
+
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./static/logo.png" alt="Logo" height="200" class="d-inline-block align-text-top" />
+            </a>
+        </div>
+    </nav>
+
+    <div class="container m-4">
+        <div class="row">
+            <div class="col-md-5">
+                <h5 class="text-center bg-light text-dark p-2">
+                    Register Your Details
+                </h5>
+
+                <form id="registerform">
+                    <div class="form-group">
+                        <input type="text" class="form-control mb-3" name="name" id="name"
+                            placeholder="Enter Your Name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control mb-3" name="email" id="email"
+                            placeholder="Enter Your Email" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" class="form-control mb-3" name="aadhar" id="aadhar"
+                            placeholder="Enter Your aadhar Card Number" />
+                    </div>
+
+                    <div class="form-check form-check-inline mb-3">
+                        <input type="radio" class="form-check-input" name="type" id="male" value="male" />
+
+                        <label for="form-check-label">Male</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="type" id="female" value="female" />
+                        <label for="form-check-label">Female</label>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <div id="showmessage"></div>
+                <h5 class="text-center bg-light text-dark p-2">View Details</h5>
+
+                <div class="row">
+                    <div class="col-md-7"></div>
+                    <div class="col-md-5">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                            <button class="btn btn-outline-success" type="submit">
+                                Search
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <br />
+                <table class="table table-success">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">aadhar</th>
+                            <th scope="col">Gender</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="./scriptes6.js"></script>
+</body>
+
+</html>

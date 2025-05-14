@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Resume</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Readex+Pro:wght@160..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="container--main">
+        <section class="section-page" id="wrapper--hero">
+            <img src="./images/user.png" alt="">
+            <div>
+                <hi class="user-name">Anonymous User</hi>
+                <p id="bio">Software Engineer <a href="">MNC</a><a href="">Instructor</a><a href="">Youtuber</a></p>
+                <p id="email">anonymous@email.com</p>
+            </div>
+        </section>
+        <section class="section--page">
+            <div id="socials--list">
+                <a href="" target="_blank">Youtube</a>
+                <a href="" target="_blank">Twitter</a>
+                <a href="" target="_blank">Linkedin</a>
+                <a href="" target="_blank">Github</a>
+                <a href="" target="_blank">Download Resume</a>
+            </div>
+        </section>
+        <section class="section--page">
+            <h2>Skills & Qualifications</h2>
+            <ul id="qualifications--list">
+                <li>✅ 10 years experience in fullstack development</li>
+                <li>✅ Tech educator & online instructor</li>
+                <li>✅ Technical writing and Blogging</li>
+                <li>✅ Guvi Learner </li>
+            </ul>
+        </section>
+        <section class="section--page">
+            <h2>Tech Stack</h2>
+            <div id="wrapper--techstack__items">
+                <div class="card--techstack"><span>Python, Javascript, NodeJS</span></div>
+                <div class="card--techstack"><span>Django, Express, Flask, FastAPI</span></div>
+                <div class="card--techstack"><span>React, Next JS</span></div>
+                <div class="card--techstack"><span>Postgres, MongoDB, MySQL</span></div>
+            </div>
+        </section>
+        <section id="work-history-wrapper" class="section--page">
+            <h2>Work History</h2>
+            <div class="card--work-history">
+                <strong>Developer</strong>
+                <p>10/2023-present</p>
+                <p><strong>[Current Challenge]</strong>Working to improve developer adoption and experience across all
+                    Appwrites SDKs through educational content <a href="" target="_blank">Youtube Channel</a>, <a
+                        href="" target="_blank">Articles</a>& <a href="" target="_blank">community events</a></p>
+                <strong>[Progress since 9/2023]</strong>
+                <ul>
+                    <li>videos +200</li>
+                    <li>live streams</li>
+                    <li>articles</li>
+                    <li>Events</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div id="theme-switcher">
+        <div class="theme" id="theme-light" data-theme="light"></div>
+        <div class="theme" id="theme-dark" data-theme="dark"></div>
+    </div>
+</body>
+<script src="./theme.js"></script>
+
+</html>

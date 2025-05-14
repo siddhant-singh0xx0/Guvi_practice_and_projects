@@ -1,0 +1,119 @@
+body {
+    font-family: 'Courier New', monospace;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    background-image: url('/mini-project1/images/1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.header {
+    position: relative;
+}
+
+.left {
+    display: inline-block;
+    position: absolute;
+    left: 60px;
+    top: 20px;
+}
+
+.left img {
+    width: 100px;
+    filter: invert(100%);
+}
+
+.left div {
+    line-height: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.mid {
+    display: block;
+    width: 45%;
+    margin: 30px auto;
+}
+
+.navbar {
+    display: inline-block;
+}
+
+.navbar li {
+    display: inline-block;
+    font-size: 25px;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 12px;
+}
+
+.navbar li a:hover,
+.navbar li a.active {
+    text-decoration: underline;
+    color: red;
+}
+
+.right {
+    position: absolute;
+    right: 34px;
+    top: 40px;
+    display: inline-block;
+}
+
+.btn {
+    margin: 0px 9px;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border: 2px solid gray;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: white;
+    color: black;
+}
+
+.container {
+    border: 2px solid white;
+    margin-top: 75px;
+    margin-left: 377px;
+    padding: 70px;
+    width: 40%;
+    border-radius: 20px;
+    opacity: 0.9;
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.form-group input {
+    display: block;
+    width: 294px;
+    padding: 5px;
+    border: 2px solid black;
+    margin: 10px auto;
+    font-size: 25px;
+    border-radius: 50px;
+}
+
+.form-group input:hover {
+    color: white;
+    background-color: lightgray;
+}
+
+.container button {
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-size: 25px;
+}
