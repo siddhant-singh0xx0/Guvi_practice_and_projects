@@ -3,6 +3,7 @@ import "./App.css";
 import Inventory from "./components/Inventory";
 import Navbar from "./components/Navbar";
 import Counter from "./components/Counter";
+import UpdateCounterSeperate from "./components/UpdateCounterSeperate";
 function App() {
   const courses = [
     {
@@ -51,6 +52,8 @@ function App() {
         />
         <hr />
         <Counter />
+        <hr />
+        <UpdateCounterSeperate />
       </div>
     </>
   );
