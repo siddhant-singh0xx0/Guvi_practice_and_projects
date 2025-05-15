@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
-import Inventory from "./components/Inventory";
+// import Inventory from "./components/Inventory";
 import Navbar from "./components/Navbar";
-import Counter from "./components/Counter";
-import UpdateCounterSeperate from "./components/UpdateCounterSeperate";
+// import Counter from "./components/Counter";
+// import UpdateCounterSeperate from "./components/UpdateCounterSeperate";
+import FilterableProductTable from "./components/FilterableProductTable";
 function App() {
   // const courses = [
   //   {
@@ -55,6 +56,9 @@ function App() {
         <hr />
         <UpdateCounterSeperate />
       </div> */}
+      <div className="container">
+        <FilterableProductTable />
+      </div>
     </>
   );
 }
