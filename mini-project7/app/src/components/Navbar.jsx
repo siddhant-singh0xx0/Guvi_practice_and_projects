@@ -2,7 +2,16 @@ import React from 'react'
 
 function Navbar() {
   return (
-    <div><h1>Siddhant Singh</h1></div>
+    <div>
+      <nav className="navbar bg-body-tertiary bg--dark p-3" data-bs-theme="dark">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
+          Siddhant Singh
+          </a>
+        </div>
+      </nav>
+
+    </div>
   )
 }
 
