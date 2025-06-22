@@ -2,10 +2,12 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import { Container } from "react-bootstrap";
-import Footer from "./components/Footer";
 import Home from "./components/Home";
+import Footer from "./components/Footer";
+import SignupScreen from "./components/screens/SignupScreen";
+import LoginScreen from "./components/screens/LoginScreen";
 
-function App() {
+export default function App() {
   return (
     <>
       <BrowserRouter>
@@ -15,6 +17,12 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
             </Routes>
+            <Routes>
+              <Route path="/signup" element={<SignupScreen />} />
+            </Routes>
+            <Routes>
+              <Route path="/login" element={<LoginScreen />} />
+            </Routes>
           </Container>
         </main>
         <Footer />
@@ -22,5 +30,3 @@ function App() {
     </>
   );
 }
-
-export default App;
