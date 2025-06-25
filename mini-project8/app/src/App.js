@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import SignupScreen from "./components/screens/SignupScreen";
 import LoginScreen from "./components/screens/LoginScreen";
+import ProductDetails from "./components/screens/ProductDetails";
 
 export default function App() {
   return (
@@ -16,6 +17,9 @@ export default function App() {
           <Container>
             <Routes>
               <Route path="/" element={<Home />} />
+            </Routes>
+            <Routes>
+              <Route path="/product/:id" element={<ProductDetails />} />
             </Routes>
             <Routes>
               <Route path="/signup" element={<SignupScreen />} />
