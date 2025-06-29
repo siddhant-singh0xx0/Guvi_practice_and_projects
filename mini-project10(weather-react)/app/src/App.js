@@ -15,7 +15,7 @@ function App() {
 
   const fetchWeather = async (e) => {
     e.preventDefault();
-    const APIKEY = "18871da74fed48a1df2605ec7c16956b";
+    const APIKEY = "";
     setLoading(true);
     setError("");
     setCurrentWeather(null);
