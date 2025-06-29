@@ -23,7 +23,7 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false); // New state for theme
 
-  const apiKey = "10b07713";
+  const apiKey = "";
 
   // useEffect to apply/remove dark-mode class to body
   useEffect(() => {
