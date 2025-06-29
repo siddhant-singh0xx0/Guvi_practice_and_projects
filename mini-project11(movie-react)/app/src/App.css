@@ -1,0 +1,57 @@
+/* Light Mode (default) */
+body {
+  background-color: #f8f9fa; /* Light background */
+  color: #212529; /* Dark text */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card {
+  background-color: #ffffff; /* White card background */
+  color: #212529;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.form-control {
+  background-color: #ffffff;
+  color: #212529;
+  border-color: #ced4da;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  color: #212529;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #343a40; /* Dark background */
+  color: #f8f9fa; /* Light text */
+}
+
+body.dark-mode .card {
+  background-color: #495057; /* Darker card background */
+  color: #f8f9fa;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+body.dark-mode .form-control {
+  background-color: #6c757d;
+  color: #f8f9fa;
+  border-color: #495057;
+}
+
+body.dark-mode .modal-content {
+  background-color: #495057;
+  color: #f8f9fa;
+}
+
+/* Adjust text-center for h1 based on theme */
+.text-center {
+  color: inherit; /* Inherit color from body */
+}
+
+/* Add some margin to the switch button for better spacing */
+.theme-switch {
+  margin-left: auto; /* Pushes the switch to the right */
+}
