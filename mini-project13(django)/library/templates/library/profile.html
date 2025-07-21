@@ -1,0 +1,25 @@
+{% extends 'library/base.html' %}
+{% block title %}My Profile{% endblock %}
+{% block content %}
+<h2>My Profile</h2>
+<p>Welcome, {{ user.username }}!</p>
+<hr>
+<h3>Books I've Borrowed</h3>
+<ul>
+    {% for record in borrowed_books %}
+    <li>
+        <strong>{{ record.book.title }}</strong> by {{ record.book.author }}
+        <br>
+        <small>Borrowed on: {{ record.borrow_date }}</small>
+        <div style="margin-top: 1rem;">
+            <form method="POST" action="{% url 'return-book' record.id %}">
+                {% csrf_token %}
+                <button type="submit">Return Book</button>
+            </form>
+        </div>
+    </li>
+    {% empty %}
+    <li>You have not borrowed any books.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

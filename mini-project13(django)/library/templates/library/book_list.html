@@ -1,0 +1,37 @@
+{% extends 'library/base.html' %}
+{% block title %}Book Catalog{% endblock %}
+{% block content %}
+<h1>Book Catalog 📚</h1>
+
+<form method="GET" action="{% url 'book-list' %}" style="max-width: none;">
+    <input type="text" name="q" placeholder="Search by title or author..." value="{{ query|default:'' }}">
+    <button type="submit">Search</button>
+</form>
+<hr>
+
+<ul>
+    {% for book in books %}
+    <li>
+        <strong>{{ book.title }}</strong> by {{ book.author }}
+        <br>
+        <small>ISBN: {{ book.isbn }}</small>
+        <div style="margin-top: 1rem;">
+            {% if book.available %}
+            <span style="color: green; font-weight: 500;">Status: Available</span>
+            {% if user.is_authenticated %}
+            <form method="POST" action="{% url 'borrow-book' book.id %}"
+                style="display: inline-block; margin-left: 1rem;">
+                {% csrf_token %}
+                <button type="submit">Borrow</button>
+            </form>
+            {% endif %}
+            {% else %}
+            <span style="color: red; font-weight: 500;">Status: Borrowed</span>
+            {% endif %}
+        </div>
+    </li>
+    {% empty %}
+    <li>No books found matching your search criteria.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

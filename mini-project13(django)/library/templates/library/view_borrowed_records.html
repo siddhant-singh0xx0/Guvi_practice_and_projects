@@ -1,0 +1,30 @@
+{% extends 'library/base.html' %}
+{% block title %}All Borrowed Books{% endblock %}
+{% block content %}
+<h2>Currently Issued Books</h2>
+<hr>
+<table>
+    <thead>
+        <tr>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Borrowed By</th>
+            <th>Date Borrowed</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in records %}
+        <tr>
+            <td>{{ record.book.title }}</td>
+            <td>{{ record.book.author }}</td>
+            <td>{{ record.user.username }}</td>
+            <td>{{ record.borrow_date }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4" style="text-align: center;">No books are currently borrowed.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

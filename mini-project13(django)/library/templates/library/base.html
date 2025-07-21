@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}The Library{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Reset & Base --- */
+        :root {
+            --primary-color: #007bff;
+            --danger-color: #dc3545;
+            --text-color: #333;
+            --light-text-color: #666;
+            --bg-color: #ffffff;
+            --surface-color: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h1,
+        h2 {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 2rem 0;
+        }
+
+        /* --- Navigation Bar --- */
+        nav {
+            background-color: var(--bg-color);
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav a {
+            color: var(--text-color);
+            margin-right: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        .nav-left a.brand {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-right span {
+            margin-right: 20px;
+            color: var(--light-text-color);
+        }
+
+        .nav-right .logout-form {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-right .logout-button {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: 500;
+            padding: 0;
+        }
+
+        .nav-right .logout-button:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Buttons & Forms --- */
+        .button,
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .button:hover,
+        button:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+        }
+
+        .button-danger {
+            background-color: var(--danger-color);
+        }
+
+        .button-danger:hover {
+            background-color: #c82333;
+        }
+
+        .button-secondary {
+            background-color: var(--light-text-color);
+        }
+
+        .button-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            box-sizing: border-box;
+            /* Important for padding and width */
+        }
+
+        form {
+            max-width: 500px;
+        }
+
+        /* --- Lists & Tables --- */
+        li {
+            background: var(--surface-color);
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        thead th {
+            background-color: var(--surface-color);
+            font-weight: 700;
+        }
+
+        .alert {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-left">
+            <a href="{% url 'book-list' %}" class="brand">The Library</a>
+            {% if user.is_staff %}
+            <a href="{% url 'manage-books' %}">Manage Books</a>
+            <a href="{% url 'view-borrowed-records' %}">Issued Books</a>
+            {% endif %}
+        </div>
+        <div class="nav-right">
+            {% if user.is_authenticated %}
+            <span>Hello, {{ user.username }}</span>
+            <a href="{% url 'profile' %}">My Profile</a>
+            <form method="post" action="{% url 'logout' %}" class="logout-form">
+                {% csrf_token %}
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+            {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <main>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+
+</html>
