@@ -77,8 +77,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'library_db_mini_project', # Your new database name
-        'USER': 'root',
-        'PASSWORD': 'SIdd12!@', # Your MySQL password
+        'USER': '',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     }
